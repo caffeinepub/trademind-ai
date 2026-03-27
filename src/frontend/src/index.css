@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Light mode (unused - app is dark-only) */
+    --background: 0.09 0.025 255;
+    --foreground: 0.97 0.008 260;
+    --card: 0.16 0.035 255;
+    --card-foreground: 0.97 0.008 260;
+    --popover: 0.19 0.04 255;
+    --popover-foreground: 0.97 0.008 260;
+    --primary: 0.5 0.2 265;
+    --primary-foreground: 0.97 0.008 260;
+    --secondary: 0.19 0.04 255;
+    --secondary-foreground: 0.97 0.008 260;
+    --muted: 0.19 0.04 255;
+    --muted-foreground: 0.73 0.02 255;
+    --accent: 0.24 0.04 255;
+    --accent-foreground: 0.97 0.008 260;
+    --destructive: 0.63 0.22 25;
+    --destructive-foreground: 0.97 0 0;
+    --border: 0.24 0.03 255;
+    --input: 0.24 0.03 255;
+    --ring: 0.5 0.2 265;
+    --chart-1: 0.5 0.2 265;
+    --chart-2: 0.73 0.2 145;
+    --chart-3: 0.63 0.22 25;
+    --chart-4: 0.84 0.17 85;
+    --chart-5: 0.6 0.15 200;
+    --sidebar: 0.12 0.03 255;
+    --sidebar-foreground: 0.97 0.008 260;
+    --sidebar-primary: 0.5 0.2 265;
+    --sidebar-primary-foreground: 0.97 0.008 260;
+    --sidebar-accent: 0.19 0.04 255;
+    --sidebar-accent-foreground: 0.97 0.008 260;
+    --sidebar-border: 0.24 0.03 255;
+    --sidebar-ring: 0.5 0.2 265;
+    /* Custom tokens */
+    --navy-deep: 0.09 0.025 255;
+    --navy-mid: 0.12 0.03 255;
+    --card-surface: 0.16 0.035 255;
+    --card-surface-2: 0.19 0.04 255;
+    --text-primary: 0.97 0.008 260;
+    --text-secondary: 0.73 0.02 255;
+    --accent-blue: 0.5 0.2 265;
+    --signal-green: 0.73 0.2 145;
+    --signal-green-bg: 0.2 0.06 145;
+    --signal-red: 0.63 0.22 25;
+    --signal-red-bg: 0.2 0.07 25;
+    --signal-yellow: 0.84 0.17 85;
+    --signal-yellow-bg: 0.22 0.06 85;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer utilities {
+  .signal-green {
+    color: oklch(var(--signal-green));
+    background-color: oklch(var(--signal-green-bg));
+  }
+  .signal-red {
+    color: oklch(var(--signal-red));
+    background-color: oklch(var(--signal-red-bg));
+  }
+  .signal-yellow {
+    color: oklch(var(--signal-yellow));
+    background-color: oklch(var(--signal-yellow-bg));
+  }
+  .text-signal-green {
+    color: oklch(var(--signal-green));
+  }
+  .text-signal-red {
+    color: oklch(var(--signal-red));
+  }
+  .text-signal-yellow {
+    color: oklch(var(--signal-yellow));
+  }
+  .bg-signal-green {
+    background-color: oklch(var(--signal-green-bg));
+  }
+  .bg-signal-red {
+    background-color: oklch(var(--signal-red-bg));
+  }
+  .bg-signal-yellow {
+    background-color: oklch(var(--signal-yellow-bg));
+  }
+  .border-signal-green {
+    border-color: oklch(var(--signal-green) / 0.4);
+  }
+  .border-signal-red {
+    border-color: oklch(var(--signal-red) / 0.4);
+  }
+  .border-signal-yellow {
+    border-color: oklch(var(--signal-yellow) / 0.4);
+  }
+  .text-accent-blue {
+    color: oklch(var(--accent-blue));
+  }
+  .bg-navy-deep {
+    background-color: oklch(var(--navy-deep));
+  }
+  .bg-navy-mid {
+    background-color: oklch(var(--navy-mid));
+  }
+  .bg-card-surface {
+    background-color: oklch(var(--card-surface));
+  }
+  .bg-card-surface-2 {
+    background-color: oklch(var(--card-surface-2));
+  }
+  .text-secondary {
+    color: oklch(var(--text-secondary));
+  }
+  .border-subtle {
+    border-color: oklch(var(--border) / 0.6);
+  }
+  .glow-blue {
+    box-shadow: 0 0 24px oklch(var(--accent-blue) / 0.2);
+  }
+  .gradient-hero {
+    background: linear-gradient(
+      180deg,
+      oklch(0.09 0.025 255) 0%,
+      oklch(0.12 0.03 255) 100%
+    );
+  }
+}
